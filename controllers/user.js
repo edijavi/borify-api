@@ -64,7 +64,7 @@ function loginUser(req, res) {
         res.status(404).send({message: 'EL usuario no existe'});
       } else {
         //Comprobar la contraseña
-        bcrypt.compare(password, user.password, function(err, check){
+        bcrypt.compare(password, user.password, function(_err, check){
           if (check) {
             //devolver los datos del usuario logeado
             if (params.gethash) {
